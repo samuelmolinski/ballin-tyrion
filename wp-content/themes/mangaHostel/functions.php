@@ -169,5 +169,21 @@ function bones_wpsearch($form) {
     return $form;
 } // don't remove this bracket!
 
+function add_query_vars($aVars) {
+    $aVars[] = "e_a"; // represents the name of the product category as shown in the URL
+    $aVars[] = "e_m"; 
+    $aVars[] = "e_d"; 
+    return $aVars;
+}
+ 
+// hook add_query_vars function into query_vars
+add_filter('query_vars', 'add_query_vars');
 
-?>
+/*function add_rewrite_rules($aRules) {
+    $aNewRules = array('msds-pif/([^/]+)/?$' => 'index.php?pagename=msds-pif&msds_pif_cat=$matches[1]');
+    $aRules = $aNewRules + $aRules;
+    return $aRules;
+}
+ 
+// hook add_rewrite_rules function into rewrite_rules_array
+add_filter('rewrite_rules_array', 'add_rewrite_rules');*/

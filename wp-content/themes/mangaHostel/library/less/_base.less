@@ -169,7 +169,7 @@ h5, .h5 {
 06. HEADER SYTLES
 *********************/
 
-.header {}
+.header { margin-bottom:30px}
 
 	#logo {
 		float:none;
@@ -287,7 +287,10 @@ nav {
 	float: left;
 	//margin-top: 2.2em;
 }
-
+#main {
+	font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
+	color: #FFFFFF;
+}
 		.hentry {
 
 			header {}
@@ -437,6 +440,77 @@ nav {
 		.size-medium {}
 		.size-thumbnail {}
 
+article {
+
+	&.event-post {
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+			font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
+			line-height: 1.0em;
+			margin: .4em 0 .2em;
+		}
+		h1{font-size: 30px;}
+		.article-header {
+			
+		}
+		.featured-image {
+			float: left;
+			background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
+			padding-top: 15px;
+			.bar {
+				min-width:100%;
+				height: 10px;
+				background: url('@{imgPath}layout-bar.png') transparent repeat-x;
+			}
+		}
+		.cont {
+		}
+		.entry-content {
+			strong {
+				color: #eab13a;
+			}
+			height: 100%;
+		}
+		.socialMediaWraper{
+			background: url('@{imgPath}bg-event-footer.png') transparent repeat;
+			height: 33px;
+			box-shadow: 0 0 10px 1px rgba(0,0,0,0.3) inset;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			right: 3px;
+		}
+		p {line-height: 1.2em;}
+	}
+}
+		.w25{width:25%;}
+		.w30{width:30%;}
+		.w35{width:35%;}
+		.w40{width:40%;}
+		.w45{width:45%;}
+		.w50{width:50%;}
+		.w55{width:55%;}
+		.w60{width:60%;}
+		.w65{width:65%;}
+		.w70{width:70%;}
+		.w75{width:75%;}
+
+		.wrapper-date {
+			.clearfix;
+			.bars {
+				background: url('@{imgPath}bg-bars2.png') transparent repeat-x;
+				background-position: left 5px;
+				display: inline-block;
+				height: 20px;
+				float: left;
+			}
+			.date {
+				display: inline-block;
+				height: 20px;
+				float: right;
+				text-align: right;
+				font-weight: 600;
+			}
+		}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
@@ -882,6 +956,103 @@ nav {
 
 		}
 
+	}
+
+	#wp-calendar {
+		background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
+		min-width: 220px;
+		font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+		thead {
+			position:relative;
+			height: 30px;
+			display: inline-block;
+			width: 100%;
+			background: url('@{imgPath}bg-calander-title.png') transparent repeat-x;
+			th{
+				width: 31px;
+				color: white;
+				font-size: 25px;
+				height: 30px;
+				display: inline-block;
+				line-height: 1em;
+				padding-left: 4px;
+			}
+		}
+		.calendar-year {
+			background-image: url('@{imgPath}bg-bars.png');
+			background-repeat: repeat-x;
+			background-position: 0 2px;
+			font-family: 'ecuyerdax';
+			font-size: 78px;
+			text-transform: uppercase;
+			color: #304f42;
+			height: 90px;
+			padding-top: 12px;
+		}
+	}
+	.calendar_event_title img {
+		min-width: 220px;
+		width: 100%
+		display:block;
+		max-width:100%;
+	}
+	.calendar-day {
+		background-image: url('@{imgPath}bg-calander-date.png');
+		background-repeat: no-repeat;
+		background-position: top;
+		width: 30px;
+		height:30px;
+		span{
+			display: block;
+			margin-top: 1px;
+			color: #FFFFFF;
+		}
+	}
+	.calendar-month {
+		font-family: 'varsity';
+		font-size: 41px;
+		text-transform: uppercase;
+		color: #ffffff;
+	}
+	#wp-calendar .cap {
+		position: absolute;
+		display: block;
+		width: 16px;
+		height: 100%;
+		top: 0;
+
+		&.capright {
+			right: -16px;
+			background: url('@{imgPath}bg-calander-title-cap-right.png') transparent no-repeat;
+		}
+		&.capleft {
+			left:-16px;
+			background: url('@{imgPath}bg-calander-title-cap-left.png') transparent no-repeat;
+		}
+	}
+	body #tooltip {
+		background: url('@{imgPath}bg-calander-dialog.png') transparent;
+		box-shadow: 0 0 10px 0 #21372e;
+		//width: 264px;
+		//height: 246px;
+		padding: 15px 15px 30px;
+		border: none;
+		border-radius: 16px;
+		font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+		.EC-tt-widget-day-event-title {
+			color:#edb21e;
+			font-size: 16px;
+			font-weight: 600px;
+		}
+		h3 {
+			font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+			color: #FFFFFF;
+		}
+		li {
+			font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+			margin: 0;
+			text-transform: uppercase;
+		}
 	}
 
 /*********************

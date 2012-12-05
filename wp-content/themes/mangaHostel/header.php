@@ -54,5 +54,6 @@
 				
 				</header> <!-- end header -->
 
-				<div id="inner-content" class="wrap clearfix">
+				<div id="inner-content" class="clearfix">
+					<?php d(get_bloginfo("language")); ?>
     

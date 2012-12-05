@@ -2,7 +2,7 @@
 .clearfix:after{clear:both;}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 .image-replacement{text-indent:100%;white-space:nowrap;overflow:hidden;}
-.btn{background-position-y:top !bottom;background-repeat:no-repeat;display:block;}.btn:focus,.btn:hover,.btn.cur{background-position-y:bottom !important;}
+.btn{background-position-y:top !important;background-repeat:no-repeat;display:block;}.btn:focus,.btn:hover,.btn.cur{background-position-y:bottom !important;}
 span.amp{font-family:Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;font-style:italic;}
 .text-left{text-align:left;}
 .text-center{text-align:center;}
@@ -20,7 +20,7 @@ span.amp{font-family:Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif
 .clearfix:after{clear:both;}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 .image-replacement{text-indent:100%;white-space:nowrap;overflow:hidden;}
-.btn{background-position-y:top !bottom;background-repeat:no-repeat;display:block;}.btn:focus,.btn:hover,.btn.cur{background-position-y:bottom !important;}
+.btn{background-position-y:top !important;background-repeat:no-repeat;display:block;}.btn:focus,.btn:hover,.btn.cur{background-position-y:bottom !important;}
 span.amp{font-family:Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;font-style:italic;}
 .text-left{text-align:left;}
 .text-center{text-align:center;}
@@ -56,9 +56,19 @@ nav{position:relative;}
 .onecol,.twocol,.threecol,.fourcol,.fivecol,.sixcol,.sevencol,.eightcol,.ninecol,.tencol,.elevencol,.twelvecol{position:relative;float:left;margin-left:2.762430939%;}
 .first{margin-left:0;}
 .last{float:right;}
-.wrap{max-width:1140px;}
+.tier{width:99.999999993%;position:relative;float:left;margin-left:0;}
+.featured2{width:31.491712705%;position:relative;float:left;margin-left:2.762430939%;}
+.gallery{width:31.491712705%;position:relative;float:left;margin-left:2.762430939%;}
+.events{width:31.491712705%;position:relative;float:left;margin-left:2.762430939%;}
+.wrap{max-width:1765px;}
 #content{padding-left:280px;margin-left:-280px;float:left;}
+.tier{width:48.618784527%;position:relative;float:left;margin-left:2.762430939%;}
+.featured2{width:31.491712705%;position:relative;float:left;margin-left:2.762430939%;}
+.gallery{width:31.491712705%;position:relative;float:left;margin-left:2.762430939%;}
+.events{width:31.491712705%;position:relative;float:left;margin-left:2.762430939%;}
+.first{margin-left:0;}
 #logo{float:left;}
+#inner-header{width:100%;}
 .nav{border:0;margin:0;background:transparent;line-height:24px;}.nav li{float:right;position:relative;margin:0 1%;}.nav li a{border-bottom:0;}
 .nav li ul.sub-menu,.nav li ul.children{width:200px;border:1px solid #ccc;border-top:0;position:absolute;display:none;z-index:8999;}.nav li ul.sub-menu li,.nav li ul.children li{}.nav li ul.sub-menu li a,.nav li ul.children li a{padding-left:10px;border-right:0;display:block;width:180px;border-bottom:1px solid #ccc;}
 .nav li ul.sub-menu li:last-child a,.nav li ul.children li:last-child a{border-bottom:0;}
@@ -67,6 +77,9 @@ nav{position:relative;}
 nav{margin-top:35px;background:url('../images/bg-menu.png') repeat-x;height:71px;box-shadow:none;}
 .menucap{display:block;position:absolute;top:0;width:11px;height:42px;}.menucap.mcleft{left:-11px;background:url('../images/layout-menu-cap-left.png') no-repeat;}
 .menucap.mcright{right:-11px;background:url('../images/layout-menu-cap-right.png') no-repeat;}
+article.event-post{width:48.618784527%;position:relative;float:left;min-width:700px;margin-bottom:25px;}article.event-post .featured-image{width:48.618784527%;position:relative;float:left;margin-left:2.762430939%;float:left;background:url('../images/layout-bar-double.png') transparent repeat-x;padding-top:15px;margin-left:0;}article.event-post .featured-image img{max-width:100%;}
+article.event-post .cont{width:48.618784527%;height:100%;position:absolute;right:0;}
+article.event-post.first{margin-right:2.762430939%;}
 .widgettitle{border-bottom:2px solid #444;margin-bottom:0.75em;}
 .widget{padding:0 10px;margin:2.2em 0;}.widget ul li{margin-bottom:0.75em;}
 .widget ul li ul{margin-top:0.75em;padding-left:1em;}

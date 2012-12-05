@@ -21,13 +21,31 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	max-width: 1140px;
+	//max-width: 1140px;
+	max-width: 1765px
 }
 
 #content {
 	padding-left: 280px;
 	margin-left: -280px;
 	float:left;
+}
+.tier {
+	.sixcol;
+}
+.tierfull {
+}
+.featured2 {
+	.fourcol;
+}
+.gallery {
+	.fourcol;
+}
+.events {
+	.fourcol;
+}
+.first {
+  margin-left: 0;
 }
 /*********************
 HEADER SYTLES
@@ -38,7 +56,9 @@ HEADER SYTLES
 	#logo { 
 		float:left;
 	}
-
+#inner-header {
+	width:100%;
+}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -174,6 +194,39 @@ nav {
 		}
 	}
 	
+/*********************
+Content
+*********************/
+
+article {
+	&.event-post {
+		width: 48.618784527%;
+		position: relative;
+		float: left;
+		min-width: 700px;
+		margin-bottom: 25px;
+		.featured-image {
+			.sixcol;
+			float: left;
+			background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
+			padding-top: 15px;
+			margin-left: 0;
+			img {
+				max-width: 100%;
+			}
+		}
+		.cont {
+			width: 48.618784527%;
+			height: 100%;
+			position: absolute;
+			right: 0;			
+		}
+		&.first {
+			margin-right: 2.762430939%;
+		}
+	}
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
