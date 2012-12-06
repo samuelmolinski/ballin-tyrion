@@ -125,6 +125,7 @@ a, a:visited {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: @sans-serif;
+	font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
 	text-rendering: optimizelegibility;
 	font-weight: 500;
 	/*
@@ -285,7 +286,7 @@ nav {
 
 #content {
 	float: left;
-	//margin-top: 2.2em;
+	margin-bottom: 2.2em;
 }
 #main {
 	font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
@@ -441,13 +442,12 @@ nav {
 		.size-thumbnail {}
 
 article {
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+		line-height: 1.0em;
+		margin: .4em 0 .2em;
+	}
 
 	&.event-post {
-		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-			font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
-			line-height: 1.0em;
-			margin: .4em 0 .2em;
-		}
 		h1{font-size: 30px;}
 		.article-header {
 			
@@ -456,11 +456,6 @@ article {
 			float: left;
 			background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
 			padding-top: 15px;
-			.bar {
-				min-width:100%;
-				height: 10px;
-				background: url('@{imgPath}layout-bar.png') transparent repeat-x;
-			}
 		}
 		.cont {
 		}
@@ -482,6 +477,22 @@ article {
 		p {line-height: 1.2em;}
 	}
 }
+			.bar {
+				min-width:100%;
+				height: 10px;
+				background: url('@{imgPath}layout-bar.png') transparent repeat-x;
+			}
+	.tier {
+		color: #FFFFFF;
+	}
+		.bars {
+			background: url('@{imgPath}bg-bars2.png') transparent repeat-x;
+			background-position: left 5px;
+			display: inline-block;
+			height: 20px;
+			width: 100%
+		}
+
 		.w25{width:25%;}
 		.w30{width:30%;}
 		.w35{width:35%;}
@@ -511,6 +522,25 @@ article {
 				font-weight: 600;
 			}
 		}
+.gallery {
+	&.tier {margin-left: 0; clear: left;}
+	.anythingSlider-default{
+		background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
+		padding-top: 15px;
+	}
+	
+	img {
+		max-width: 100%;
+	}
+	.description{
+		background: url('@{imgPath}bg-event-footer.png') transparent repeat;
+		height: 65px;
+		box-shadow: 0 0 10px 1px rgba(0,0,0,0.3) inset;
+		width: 100%;
+		padding: 7px 1em;
+	}
+}
+
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/

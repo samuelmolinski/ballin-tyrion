@@ -6,7 +6,7 @@ Template Name: Events
 get_header(); ?>
 					<div id="main" class="first clearfix" role="main">
 					<?php  
-						d($wp_query->query_vars);
+						//d($wp_query->query_vars);
 						if(isset($wp_query->query_vars['e_a'])) {
 							global $wpdb;
 
