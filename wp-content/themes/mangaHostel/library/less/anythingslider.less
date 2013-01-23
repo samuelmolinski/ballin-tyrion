@@ -8,8 +8,18 @@ SET DEFAULT DIMENSIONS HERE
 *****************************/
 /* change the ID & dimensions to match your slider */
 #slider {
-	width: 630px;
-	height: 465px;
+	//width: 630px;
+	//height: 465px;
+	width: 700px;
+	height: 450px;
+	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.foto_slider {
+	width: 700px;
+	height: 450px;
 	list-style: none;
 	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
 	overflow-y: auto;
@@ -78,7 +88,7 @@ SET DEFAULT DIMENSIONS HERE
 	=================================
 	*/
 	/* Overall Wrapper */
-	margin: 0 auto;
+	//margin: 0 auto;
 	padding: 0 @arrow-horizontal-pad @navigation-bottom-pad @arrow-horizontal-pad;
 
 	/* slider window - top & bottom borders, default state */
@@ -190,7 +200,7 @@ SET DEFAULT DIMENSIONS HERE
 
 	/* back arrow */
 	.back {
-		top: 53px;
+		top: 52px;
 		height: 57px;
 		a { background-position: @arrow-back-position; background: url(../images/slider-nav-previous.png) no-repeat; height: 57px;}
 		a:hover, a.hover { background-position: @arrow-back-position-hovered; }
@@ -198,7 +208,7 @@ SET DEFAULT DIMENSIONS HERE
 
 	/* forward arrow */
 	.forward {
-		top: 15px;
+		top: 14px;
 		height: 39px;
 		a { background-position: @arrow-forward-position;  background: url(../images/slider-nav-next.png) no-repeat;height: 39px;}
 		a:hover, a.hover { background-position: @arrow-forward-position-hovered; }

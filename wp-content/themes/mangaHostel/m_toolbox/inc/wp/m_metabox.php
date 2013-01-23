@@ -1,6 +1,6 @@
 <?php
 
-function get_featured_posts($post_type = array('post'), $numPost = 3) {
+function get_featured_posts($post_type = array('post'), $numPost = 3, $metaName = 'enableFeatured') {
     $a = array(
 		'posts_per_page' => -1,
 		'post_status' => 'publish',
@@ -17,14 +17,18 @@ function get_featured_posts($post_type = array('post'), $numPost = 3) {
 	foreach ($ps as $p) {		
 		$mb_destaque->the_meta($p->ID);
 		$meta = $mb_destaque->meta;
-		$ef = $mb_destaque->meta['enableFeatured'];
-		//d($ef);
-		if ($ef) {
-			$featured[] = $p->ID;
-		}
-		
-		if (($numPost != -1)&&(count($featured) >= $numPost)) {
-			 break;
+		//d($meta);
+		if(is_array($meta)){
+
+			$ef = $mb_destaque->meta[$metaName];
+			//d($ef);
+			if ($ef) {
+				$featured[] = $p->ID;
+			}
+			
+			if (($numPost != -1)&&(count($featured) >= $numPost)) {
+				 break;
+			}
 		}
 	
 	}

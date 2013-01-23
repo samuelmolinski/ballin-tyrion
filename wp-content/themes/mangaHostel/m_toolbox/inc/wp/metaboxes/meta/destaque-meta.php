@@ -6,9 +6,9 @@
 		<input id="enableFeatured" type="checkbox" name="<?php $metabox->the_name(); ?>" value="1"<?php if ($metabox->get_the_value()) echo ' checked="checked"'; ?>/></label>
 	</p>
 		<p>
-		<?php $metabox->the_field('videoURL'); ?>
-		<label for="<?php $metabox->the_name(); ?>">URL de Vídeo: </label>
-		<input type="text" name="<?php $metabox->the_name(); ?>" value="<?php $metabox->the_value(); ?>"  />
+		<?php $metabox->the_field('enableFeatured2'); ?>
+		<label for="<?php $metabox->the_name(); ?>">Destaque 2º: </label>
+		<input id="enableFeatured2" type="checkbox" name="<?php $metabox->the_name(); ?>" value="1"<?php if ($metabox->get_the_value()) echo ' checked="checked"'; ?>/></label>
 	</p>
  
  	<div class="clear"></div>

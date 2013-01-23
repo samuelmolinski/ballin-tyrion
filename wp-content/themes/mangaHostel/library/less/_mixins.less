@@ -105,14 +105,21 @@ TYPOGRAPHY
     	font-style: normal;
 	}
 */
-
+.cur {
+	background-position: bottom !important;
+}
 .btn {
 	background-position-y: top !important;
 	background-repeat: no-repeat;
 	display:block;
+	text-decoration: none;
+	text-indent: -9999em;
 	&:focus, &:hover, &.cur {
 		background-position-y: bottom !important;
 	}
+}
+.last {
+	margin-right:0;
 }
 
 /* 

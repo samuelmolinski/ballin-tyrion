@@ -27,18 +27,20 @@ and will be used across all viewports.
 
 ******************************************************************/
 
-//@import "_mixins.less";
+@import "_mixins.less";
 
 /*********************
 01. GENERAL STYLES
 *********************/
 
 body {
-	font-family: @serif;
+	font-family: 'regencielight', sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: #565656;
-	background: url('@{imgPath}bg-main.jpg') no-repeat fixed center top;
+	background: url('@{imgPath}bg-main.jpg') repeat-y fixed left top;
+	overflow-x: hidden;
+
 }
 
 /********************
@@ -87,7 +89,7 @@ body {
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 98%;
 	//margin: 0 auto;
 }
 
@@ -127,7 +129,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: @sans-serif;
 	font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: 600;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -170,7 +172,7 @@ h5, .h5 {
 06. HEADER SYTLES
 *********************/
 
-.header { margin-bottom:30px}
+.header { margin-bottom:10px}
 
 	#logo {
 		float:none;
@@ -210,9 +212,10 @@ nav {
 			text-decoration: none;
 			padding: 10px 10px;
 			font-family: 'BebasNeueRegular';
-			color: #ffffff;
+			color: #f1ecdc;
 			font-size: 24px;
 			text-shadow: -2px 2px 0px #333;
+			letter-spacing: 1px;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -242,7 +245,7 @@ nav {
 			li {
 
 				a {
-					padding-left: 30px;
+					//padding-left: 30px;
 
 					&:hover,
 					&:focus {}
@@ -253,7 +256,7 @@ nav {
 
 				&:first-child {}
 
-				&:last-child {}
+				&:last-child { border-bottom: none;}
 
 			}
 
@@ -287,12 +290,28 @@ nav {
 #content {
 	float: left;
 	margin-bottom: 2.2em;
-}
-#main {
-	font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
+	//min-width: 1065px;
+	min-width: 980px;
+	//min-width: 1140px;
 	color: #FFFFFF;
+	//overflow-x: hidden;
 }
-		.hentry {
+
+#main {
+	font-family: 'regencielight', sans-serif;
+	//font-family: 'Znikomit', Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 17px;
+	color: #FFFFFF;
+
+}
+
+.page-template-page-acomodacoes-suite-php, .page-template-page-acomodacoes-quarto-php {
+	#inner-content {
+		padding-top: 35px;
+	}
+}
+
+.hentry {
 
 			header {}
 
@@ -329,7 +348,11 @@ nav {
 		/* entry content */
 		.entry-content {
 
-			p {}
+			p {
+				&:first-child {
+					margin-top: 3px;
+				}
+			}
 
 
 			ul, ol, table, dl {}
@@ -441,6 +464,131 @@ nav {
 		.size-medium {}
 		.size-thumbnail {}
 
+.featured2 {
+	width: 31.491712705%;
+	min-width: 230px;
+	max-width: 250px;
+	margin-right: 2.762430939%;
+	float: left;
+	height: 560px;
+	margin-bottom: 45px;
+
+	.entry-content {
+		background: url('@{imgPath}layout-featured-description2.png') no-repeat;
+		background-position: bottom;
+		background-size: 100% 100%;
+		font-size: 96%;
+	}
+}
+
+#galleryEvent_wrapper {
+	width: 63.74585634900001%;
+	min-width: 450px;
+	max-width: 520px;
+	float: left;
+}
+
+.gallery_widget {
+	//.fourcol;
+
+	float: left;
+	//width: 250px;
+	width: 48.618784527%;
+	margin-right: 2.762430939%;
+	height: 470px;
+	background: url('@{imgPath}layout-bar.png') transparent repeat-x;
+	background-position: bottom;
+
+	.gallery_title {
+		//width: 48.618784527%;
+		width: 100%;
+		//max-width:100%;
+	}
+
+	.featuredGalleries {
+		float: left;
+		width: 100%;
+	}
+	
+	.fg-img {
+		//width: 122px;
+		width: 48.618784527%;
+		//height: 122px;
+		float: left;
+		display: block;
+		margin-bottom: 7px;
+		&.odd {
+			margin-right:5px;
+		}
+	}
+
+	.bar {
+		float: left;
+	}
+}
+
+.event_widget {
+	width: 48.618784527%;
+	float: left;
+	height: 470px;
+	background: url('@{imgPath}layout-bar.png') transparent repeat-x;
+	background-position: bottom;
+}
+
+.rio_ate_o_caroco {
+	//background-image: url('@{imgPath}rio_ate_o_caroco.png');
+	//background-repeat: no-repeat;
+	//height: 98px;
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+}
+
+.parceiros {
+	//max-width: 700px;
+	.entry-content {
+		min-height: 175px;
+		overflow: hidden;
+		margin-top: 1em;
+
+		img {
+			margin:0 1em 0 0;
+			max-width: 300px;
+		}
+	}
+	.barsDiv{
+		background: url('@{imgPath}bg-bars.png') transparent repeat-x;
+		background-position: left;
+		display: inline-block;
+		height: 32px;
+		width: 100%;
+		margin-bottom: -6px;
+	}
+	.bar {
+		min-width:100%;
+		height: 7px;
+		background: url('@{imgPath}layout-bar.png') transparent repeat-x;
+
+	}
+	.website {
+		color: #eab13a;
+		text-align: right;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-decoration: none;
+		display: block;
+	}
+}
+
+.single {
+
+	.post-img {
+		margin:0 1em 0 0;
+		//max-width: 700px;
+		width: 100%;
+	}
+}
+
 article {
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 		line-height: 1.0em;
@@ -462,35 +610,138 @@ article {
 		.entry-content {
 			strong {
 				color: #eab13a;
+				text-transform: uppercase;
 			}
 			height: 100%;
 		}
-		.socialMediaWraper{
+		.socialMediaWraper{ 
 			background: url('@{imgPath}bg-event-footer.png') transparent repeat;
 			height: 33px;
 			box-shadow: 0 0 10px 1px rgba(0,0,0,0.3) inset;
 			position: absolute;
-			bottom: 0;
+			bottom: 4px;
 			width: 100%;
 			right: 3px;
+			img {
+				float: right;
+				margin: 6px 10px;
+			}
+
+			a.sm {
+				width:27px;
+				height: 31px;
+				float: right;
+				cursor: pointer;
+
+				&.tw {
+					background-image: url('@{imgPath}sm_tw.png');
+				}
+				&.fb {
+					background-image: url('@{imgPath}sm_fb.png');
+				}
+			}
+
+			
 		}
 		p {line-height: 1.2em;}
 	}
+}
+.cp_dicas {
+	&.odd {
+		margin-right: 1.762431%;
+	}
+	&.even {
+
+	}
+}
+.featureImg {
+	a {
+		display: block;
+		img {max-width: 100%; min-width: 100%;}
+	}
+
+}
+.featured {
+	.entry-content{
+		position: relative;
+		color: #373737;
+		h1.page-title {
+			font-size: 24px;
+			a{color: #373737;}
+		}
+		img.bg {
+			max-width: 100%;
+			min-width: 100%;
+			position:absolute;
+			z-index: -1;
+		}
+		.frame {
+			padding: 10px 22px 22px;
+			height: 127px;
+		}
+		.mais {
+			background-image: url('@{imgPath}btn-mais.png');
+			width:40px;
+			height:45px;
+			position: absolute;
+			bottom:-32px;
+			right: 30px;
+		}
+	}
+}
+.featured2 {
+	//width: 250px;
+	.entry-content {		
+		.frame {
+			height: 278px;
+		}
+		.mais {
+			background-image: url('@{imgPath}btn-mais.png');
+			bottom:-28px;
+		}
+	}
+}
+.box {
+	width:100%;
+	.boxcol1 { width:22px; float:left;}
+	.boxcol2 { width:100px; float:left;}
+	.boxcol3 { width:22px; float:left;}
+	.box1{background: url('@{imgPath}layout-description-1.png') transparent repeat-y; width:22px; float:left; min-height: 50px;}
+	.box3{background: url('@{imgPath}layout-description-5.png') transparent repeat-y; width:22px; float:left; min-height: 50px;}
+	.box5{background: url('@{imgPath}layout-description-5.png') transparent repeat; min-height: 50px; width:100%}
+	.box7{background: url('@{imgPath}layout-description-7.png') transparent no-repeat; width:22px; height:22px; float:left;}
+	.box8{background: url('@{imgPath}layout-description-8.png') transparent repeat-x; height:22px; width:100%}
+	.box9{background: url('@{imgPath}layout-description-9.png') transparent no-repeat; width:22px; height:22px; float:left;}
 }
 			.bar {
 				min-width:100%;
 				height: 10px;
 				background: url('@{imgPath}layout-bar.png') transparent repeat-x;
 			}
+			.bar2 {
+				min-width:100%;
+				height: 15px;
+				background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
+			}
+			.bar3 {
+				min-width:100%;
+				height: 65px;
+				background: url('@{imgPath}bg-bars3.png') transparent repeat-x;
+				margin-top: 6px;
+			}
 	.tier {
 		color: #FFFFFF;
+		margin-bottom: 45px;
 	}
 		.bars {
 			background: url('@{imgPath}bg-bars2.png') transparent repeat-x;
 			background-position: left 5px;
 			display: inline-block;
 			height: 20px;
-			width: 100%
+			width: 100%;
+			&.services {
+				margin-top: 1em;
+			}
 		}
 
 		.w25{width:25%;}
@@ -522,7 +773,136 @@ article {
 				font-weight: 600;
 			}
 		}
+/* Page - Gallery */
+.sliderTitle {
+	line-height: 1em;
+	margin-top: 10px;
+}
+.flickrGallery {
+
+	margin-left: 0;
+	margin-right: 2.762430939%;
+	min-width: 400px;
+	max-width: 700px;
+
+	.flexslider {
+		display: none;
+		&.current {
+			display: block;
+		}
+	}
+	.bar {
+		margin: 5px 0;
+	}
+	.facebookLink {
+		height: 65px;
+		width: 65px;
+		float: right;
+		background: url('@{imgPath}bg-event-footer.png') transparent repeat;
+		box-shadow: 0 0 10px 1px rgba(0,0,0,0.3) inset;
+		a {
+			height: 65px;
+			width: 65px;
+			background: url('@{imgPath}facebook-gallery.png') center center transparent no-repeat;
+			display: block;
+			cursor: pointer;
+		}
+	}
+	.description, .gDescription{
+		background: url('@{imgPath}bg-event-footer.png') transparent repeat;
+		min-height: 65px;
+		box-shadow: 0 0 10px 1px rgba(0,0,0,0.3) inset;
+		float: left;
+		padding: 7px 1em;
+		margin-bottom: 7px;
+	}
+}
+
+.data {
+	display: none;
+}
+.album_widget {
+	min-width: 400px;
+	.entry-content {
+		overflow: hidden;
+	}
+	margin-left: 0 !important;
+}
+.albums {
+	//text-align: center;
+	.triple {
+		width: 125px;
+		float: left;
+		margin-right: 5px;
+	}
+	.fg-img {
+		margin-bottom: 5px;
+		display: inline-block;
+		cursor: pointer;
+		float: left;
+	}
+}
+.album-h {
+	position: relative;
+	display: block;
+	height: 125px;
+	width: 125px;
+	&:hover, &.cur{
+		.mask {		
+			position: absolute;
+			height: 125px;
+			width: 125px;
+			background: url('@{imgPath}album-h.png') center center transparent no-repeat;		
+			cursor: pointer;
+		}
+	} 
+}
+.album-nav {
+	position: absolute;
+}
+.albums-prev {
+	width: 40px;
+	right: 0px;
+	height: 57px;
+	background: url(../images/slider-nav-previous.png) no-repeat;	
+	margin-top: -37px;
+	.btn;
+}
+.albums-next {	
+	width: 40px;
+	right: 0px;
+	height: 39px;
+	background: url(../images/slider-nav-next.png) no-repeat;
+	margin-top: -75px;
+	.btn;
+}
+/*
+root element for the scrollable.  when scrolling occurs this
+element stays still.
+*/
+.scrollable {
+  /* required settings */
+  position:relative;
+  overflow:hidden;
+  height: 390px;
+}
+ 
+/*
+root element for scrollable items. Must be absolutely positioned
+and it should have a extremely large width to accommodate scrollable
+items.  it's enough that you set width and height for the root element
+and not for this element.
+*/
+.scrollable .items {
+  /* this cannot be too large */
+  //width:20000em;
+  height: 390px;
+  position:absolute;
+}
+
 .gallery {
+	margin-right: 2.762430939%;
+	//float: left;
 	&.tier {margin-left: 0; clear: left;}
 	.anythingSlider-default{
 		background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
@@ -532,15 +912,184 @@ article {
 	img {
 		max-width: 100%;
 	}
-	.description{
+	.gDescription, .description {
 		background: url('@{imgPath}bg-event-footer.png') transparent repeat;
-		height: 65px;
+		min-height: 65px;
 		box-shadow: 0 0 10px 1px rgba(0,0,0,0.3) inset;
 		width: 100%;
 		padding: 7px 1em;
 	}
+	&.hostel {
+		width:700px;
+	}
 }
 
+.gallery.sixcol {
+	width: 700px;
+}
+
+#main.sixcol {
+	//min-width: 500px;
+	margin-left: 0;
+}
+.fix700 {
+	width: 700px !important;
+}
+.cp_acomodacaos {
+	display: none;
+	padding: 12px 0;
+	margin: 0;
+	clear: left;
+
+	.gallery {
+		float: left;
+		margin-right: 2.762430939%;
+		.bar {
+			margin-top: 7px;
+		}
+	}
+	.description{
+		max-width: 700px;
+		float:left;
+		position: relative;
+		padding-bottom: 50px;
+		.reserve {
+			background-image: url('@{imgPath}btn-reservar.png');
+			height: 40px;
+			width: 260px;
+			float: left;
+		}
+	}
+	.spacer {
+		background: url('@{imgPath}bg-bars2.png') transparent repeat-x;
+		display: inline-block;
+		width:100%;
+		height: 14px;
+	}
+}
+
+	.selectRoom {
+		margin-top: -35px;
+		ul {
+			margin: 0;
+
+			li {
+				//margin: 0;
+				float: left;
+			}
+		}
+	}
+
+.ac1 {background-image: url('@{imgPath}ac_ipanema.png'); height: 31px; width:160px; margin: 15px; display:inline-block;}
+.ac2 {background-image: url('@{imgPath}ac_leblon.png'); height: 31px; width:146px; margin: 15px; display:inline-block;}
+.ac3 {background-image: url('@{imgPath}ac_leme.png'); height: 31px; width:115px; margin: 15px; display:inline-block;}
+.ac4 {background-image: url('@{imgPath}ac_pontal.png'); height: 31px; width:146px; margin: 15px; display:inline-block;}
+.ac5 {background-image: url('@{imgPath}ac_lapa.png'); height: 31px; width:111px; margin: 15px; display:inline-block;}
+.ac6 {background-image: url('@{imgPath}ac_urca.png'); height: 31px; width:117px; margin: 15px; display:inline-block;}
+.ac7 {background-image: url('@{imgPath}ac_copa.png'); height: 31px; width:115px; margin: 15px; display:inline-block;}
+.ac8 {background-image: url('@{imgPath}ac_itaqua.png'); height: 31px; width:145px; margin: 15px; display:inline-block;}
+
+.suite {
+	margin-right: 15px;
+}
+.quarto {
+	margin-right: 44px;
+}
+.servicos {
+	min-width: 700px;
+	.article-header {
+		p {
+			//font-size: 12px;
+		}
+	}
+	ul {
+		list-style:none;
+		li {			
+			background: url("@{imgPath}layout-list.png") no-repeat left center;
+			padding-left: 20px;
+			text-transform: uppercase;
+		}
+	}
+	.col2 {
+		float:left;
+	}
+	.article-footer {
+		float: left;
+	}
+	.imagefooter {
+		float: left;
+		width: 100%;
+
+		img {
+			float: left;
+			width: 20%;
+			display: block;
+		}
+	}
+	.bar2 {
+		float:left;
+		margin-top:5px;
+	}
+}
+.right {float: right;}
+.left {float: left;}
+.the_content {
+	img {margin:0 0 0 -141px; max-width: none;}
+	width: 445px;
+	margin-left: 100px;
+	float: left;
+	margin-right: 15px;
+}
+.map_canvas {
+	float: left;
+	.bar {
+		margin-top:7px;
+	}
+	.address {
+		margin-top: 2px;
+		min-height: 57px;
+		background: url('@{imgPath}bg-event-footer.png');
+		p {			
+			text-align: right;
+			color: #eab13a;
+			line-height: 1.1em;
+			font-size: 14px; 
+			font-family: sans-serif;
+			padding: .5em;
+			margin: 0;
+		}
+	}
+}
+.cf-ol {
+	li {
+		margin-bottom: 8px;
+		label {
+			display: none;
+		}
+	}
+}
+.cform {
+	input[type=text], textarea {
+		width:440px;
+		background: url('@{imgPath}bg-contato-input.png');
+		border: solid thin #637b6f;
+		border-radius: 3px;
+		padding: .5em 1em;
+		font-size: 12px;
+		color: #FFFFFF;
+	}
+}
+
+.reqtxt, .emailreqtxt, .cf_hidden, .linklove, #usermessagea {
+	display:none;
+}
+#sendbutton {
+	background: url("@{imgPath}btn-enviar.png") no-repeat;
+	width: 443px;
+	height: 68px;
+	.btn;
+	border: none;
+}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
@@ -929,10 +1478,13 @@ article {
 	margin-left: 15px;
 	width: 265px;
 	z-index: 100;
-	position: relative;
-	float: left;
+	//position: relative;
+	//float: left;
+	//position: absolute;
+	position: fixed;
 }
 	#address {
+		clear: left;
 		width:153px;
 		margin: 15px auto;
 		a, img {display:block;}
@@ -952,10 +1504,11 @@ article {
 			margin:3px;
 			width:42px;
 			height:41px;
+			text-indent: 0;
 			a {
 				display: inline-block;
-				width: 100%;
-				height:100%;
+				width: 42px;
+				height: 41px;
 			}
 		}
 		.fb{background-position: 0px 0px;}
@@ -965,6 +1518,28 @@ article {
 		.ig{background-position: -201px 0px;}
 		.fs{background-position: -251px 0px;}
 	}
+.lang {
+	width: 160px;
+	margin: 15px auto;
+	.pt_br {
+		margin: 5px;
+		float:left;
+		display: block;
+		width:70px;
+		height: 40px;
+		background-image: url('@{imgPath}btn-pt-br.png');
+		.btn;
+	}
+	.en_br {
+		margin: 5px;
+		float:left;
+		display: block;
+		width:70px;
+		height: 40px;
+		background-image: url('@{imgPath}btn-en-br.png');
+		.btn;
+	}
+}
 	.widgettitle {}
 
 	.widget {
@@ -987,12 +1562,17 @@ article {
 		}
 
 	}
-
+	#calendar_wrap{ 
+		width:100%;
+		margin: auto;
+	}
 	#wp-calendar {
-		background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
-		min-width: 220px;
+		//background: url('@{imgPath}layout-bar-double.png') transparent repeat-x;
+		width: 225px !important;
+		margin: auto;
 		font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 		thead {
+			float: left;
 			position:relative;
 			height: 30px;
 			display: inline-block;
@@ -1004,9 +1584,15 @@ article {
 				font-size: 25px;
 				height: 30px;
 				display: inline-block;
-				line-height: 1em;
+				line-height: 28px;
 				padding-left: 4px;
+				float: left;
 			}
+		}
+		tr {
+			position: relative;
+			float: left;
+			width:100%;
 		}
 		.calendar-year {
 			background-image: url('@{imgPath}bg-bars.png');
@@ -1019,11 +1605,20 @@ article {
 			height: 90px;
 			padding-top: 12px;
 		}
+		#EC_loadingPane {
+			min-width: 112px;
+			margin: 0 -5px;
+			background-image: url('@{imgPath}layout-intra-mes.png');
+			background-repeat: no-repeat;
+			background-position: center center;
+			height: 39px;
+		}
+		caption {
+			float: left;
+		}
 	}
 	.calendar_event_title img {
 		min-width: 220px;
-		width: 100%
-		display:block;
 		max-width:100%;
 	}
 	.calendar-day {
@@ -1037,13 +1632,23 @@ article {
 			margin-top: 1px;
 			color: #FFFFFF;
 		}
+		&:hover {
+			background-position: bottom;
+		}
 	}
 	.calendar-month {
-		font-family: 'varsity';
-		font-size: 41px;
+		font-family: 'collegiateflfregular';
+		font-size: 33px;
 		text-transform: uppercase;
 		color: #ffffff;
 	}
+	#EC_previousMonth, #EC_nextMonth {
+		font-family: 'collegiateblackflfregular';
+		font-size: 25px;
+		text-transform: uppercase;
+		color: #304F42;
+	}
+	#prevNextMonths {display: none;}
 	#wp-calendar .cap {
 		position: absolute;
 		display: block;
@@ -1058,6 +1663,9 @@ article {
 		&.capleft {
 			left:-16px;
 			background: url('@{imgPath}bg-calander-title-cap-left.png') transparent no-repeat;
+		}
+		&.no-bg{
+			background: none;
 		}
 	}
 	body #tooltip {

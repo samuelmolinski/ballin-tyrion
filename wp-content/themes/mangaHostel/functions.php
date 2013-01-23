@@ -9,6 +9,7 @@ sidebars, comments, ect.
 */
 
 require_once('m_toolbox/m_toolbox.php');
+require_once('m_flickr.php');
 function imgPath() {
     echo get_template_directory_uri() ."/library/images/";
 }
@@ -35,9 +36,9 @@ require_once('library/bones.php'); // if you remove this, bones will break
     - example custom taxonomy (like tags)
 */
 require_once('library/custom-post-acomodacoes.php'); 
-require_once('library/custom-post-albums.php'); 
+//require_once('library/custom-post-albums.php'); 
 require_once('library/custom-post-dicas.php'); 
-require_once('library/custom-post-eventos.php'); 
+//require_once('library/custom-post-eventos.php'); 
 require_once('library/custom-post-parceiros.php'); 
 /*
 3. library/admin.php
@@ -46,12 +47,12 @@ require_once('library/custom-post-parceiros.php');
     - adding custom login css
     - changing text in footer of admin
 */
-// require_once('library/admin.php'); // this comes turned off by default
+//require_once('library/admin.php'); // this comes turned off by default
 /*
 4. library/translation/translation.php
     - adding support for other languages
 */
-// require_once('library/translation/translation.php'); // this comes turned off by default
+require_once('library/translation/translation.php'); // this comes turned off by default
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
@@ -171,8 +172,11 @@ function bones_wpsearch($form) {
 
 function add_query_vars($aVars) {
     $aVars[] = "e_a"; // represents the name of the product category as shown in the URL
-    $aVars[] = "e_m"; 
-    $aVars[] = "e_d"; 
+    $aVars[] = "e_m";
+    $aVars[] = "e_d";
+    $aVars[] = "pid";
+    $aVars[] = "gallery";
+    $aVars[] = "slide";
     return $aVars;
 }
  

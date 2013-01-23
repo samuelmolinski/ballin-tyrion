@@ -25,7 +25,7 @@ define('DB_USER', 'admin');
 define('DB_PASSWORD', '1234');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '192.168.0.215');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -80,14 +80,15 @@ define('WPLANG', 'pt_BR');
 define('WP_DEBUG', false);
 
 /* Multisite */
-define('WP_ALLOW_MULTISITE', true);
+/*define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
 $base = '/mangaHostel/';
-define('DOMAIN_CURRENT_SITE', '192.168.0.22');
+define('DOMAIN_CURRENT_SITE', '192.168.0.215');
 define('PATH_CURRENT_SITE', '/mangaHostel/');
 define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);*/
+
 
 /* That's all, stop editing! Happy blogging. */
 

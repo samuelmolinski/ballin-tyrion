@@ -8,6 +8,7 @@ this file will be called automatically in the footer so as not to
 slow the page load.
 
 */
+if(!window.log) {window.log = function() {log.history = log.history || [];log.history.push(arguments);if(this.console) {console.log(Array.prototype.slice.call(arguments));}};}
 
 // IE8 ployfill for GetComputed Style (for Responsive Script below)
 if (!window.getComputedStyle) {
@@ -68,17 +69,17 @@ jQuery(document).ready(function($) {
 	
 	// add all your scripts here
 
-    jQuery("#slider, #slider2").anythingSlider({
+    jQuery("#slider, #slider2, .foto_slider").anythingSlider({
         // Appearance 
           theme               : "default", // Theme name 
-          mode                : "fade",   // Set mode to "horizontal", "vertical" or "fade" (only first letter needed); replaces vertical option 
+          mode                : "fade",    // Set mode to "horizontal", "vertical" or "fade" (only first letter needed); replaces vertical option 
           expand              : false,     // If true, the entire slider will expand to fit the parent element 
           resizeContents      : true,      // If true, solitary images/objects in the panel will expand to fit the viewport 
           showMultiple        : false,     // Set this value to a number and it will show that many slides at once 
           easing              : "swing",   // Anything other than "linear" or "swing" requires the easing plugin or jQuery UI 
           hashTags            : false, 
           
-          buildArrows         : true,      // If true, builds the forwards and backwards buttons 
+          buildArrows         : true,       // If true, builds the forwards and backwards buttons 
           buildNavigation     : false,      // If true, builds a list of anchor links to link to each panel 
           buildStartStop      : false,      // If true, builds the start/stop button 
          
@@ -104,15 +105,27 @@ jQuery(document).ready(function($) {
           navigationFormatter : null,      // Details at the top of the file on this use (advanced use) 
          
           // Slideshow options 
-          autoPlay            : true,     // If true, the slideshow will start running; replaces "startStopped" option 
+          autoPlay            : true,      // If true, the slideshow will start running; replaces "startStopped" option 
           pauseOnHover        : true,      // If true & the slideshow is active, the slideshow will pause on hover 
           // Times 
-          delay               : 3000,      // How long between slideshow transitions in AutoPlay mode (in milliseconds) 
-          resumeDelay         : 3000,     // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds). 
+          delay               : 5000,      // How long between slideshow transitions in AutoPlay mode (in milliseconds) 
+          resumeDelay         : 3000,      // Resume slideshow after user interaction, only if autoplayLocked is true (in milliseconds). 
           animationTime       : 600,       // How long the slideshow transition takes (in milliseconds) 
           delayBeforeAnimate  : 0,         // How long to pause slide animation before going to the desired slide (used if you want your "out" FX to show).
     });
+
+  //acomodações page
+
+  $('.selectRoom li').click(function() {
+      $('.selectRoom li').removeClass('cur');
+      $('article').hide();
+      $('article:eq('+$(this).index()+')').fadeIn();
+      $(this).addClass('cur');
+  });
 	
+  $('.selectRoom li:eq(0)').trigger('click');
+  
+  initialize();
  
 }); /* end of as page load scripts */
 

@@ -5,10 +5,45 @@ Template Name: Hostel
 ?>
 
 <?php get_header(); ?>
-					
-				    <div id="main" class="tier first clearfix" role="main">
+					<div class="gallery hostel sixcol first">
+						<div class="bar2"></div>
+							<?php
+						global $mb_page_slider;
+						$mb_page_slider->the_meta();
+						$meta = $mb_page_slider->meta;
+							//d($meta);
+						$imgs = $mb_page_slider->meta['docs'];
+							//d($imgs);
+						if($imgs) { 
+							echo "<div class='flexslider current'>";
+							echo '<ul class="slides">';
+								foreach ($imgs as $img) {
+									//d($f);
+								   	echo "<li>";
+								   	the_crop_image($img['imgurl'], '&amp;w=700&amp;h=450&amp;zc=1',700, 450);
+								   	echo "<span class='data data-$galleryID'>";
+					   				echo "<span class='title'>{$f['photo']['title']}</span>";
+					   				echo "<span class='desc'>".get_custom_length($img['title'], 160)."</span>";
+								   	echo "</span>";
+								   	echo "</li>\n\r";
+								}								  
+							echo '</ul>';
+							echo '</div>';
+							?>						
+						<?php } else {
+								//if no slider, what do we do ?!
+								echo "<h2>OMG?!</h2";
+							}
+						?>		
+						<div class="bar"></div>
+						<div class="gDescription"><span class='wrapper'></span></div>
 
-					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				    </div>
+				    <div id="main" class="hDescription sixcol lastitem clearfix" role="main">
+
+					    <?php if (have_posts()) : while (have_posts()) : the_post(); 
+
+					    ?>
 					
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						
@@ -51,29 +86,5 @@ Template Name: Hostel
 					    <?php endif; ?>
 			
 				    </div> <!-- end #main -->
-				    <div class="gallery tier">
-				    	<ul id="slider">
-							<?php
-						global $mb_page_slider;
-						$mb_page_slider->the_meta();
-						$meta = $mb_page_slider->meta;
-							//d($meta);
-						$imgs = $mb_page_slider->meta['docs'];
-							//d($imgs);
-						if($imgs) { ?>
-							<?php 	foreach ($imgs as $img) { ?>
-								<li>
-									<?php the_crop_image($img['imgurl'], '&amp;w=785&amp;h=460&amp;zc=1',785, 460); ?>
-									<div class="bar"></div>
-									<div class="description"><?php the_custom_excerpt(160, $img['title']) ?></div>
-								</li>
-							<?php } ?>
-						</ul>
-						<?php } else {
-								//if no slider, what do we do ?!
-								echo "<h2>OMG?!</h2";
-							}
-						?>
-						</ul>
-				    </div>
+				    
 <?php get_footer(); ?>

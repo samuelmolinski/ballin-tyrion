@@ -35,6 +35,9 @@ msgstr "Local"
 msgid "to"
 msgstr "para"
 
+msgid "Time"
+msgstr "Hora"
+
 #: D:\wamp\www\castalie\wp-content\plugins\events-calendar/ec_js.class.php:39
 msgid "Click date for more details"
 msgstr "Clique na data para mais detalhes"

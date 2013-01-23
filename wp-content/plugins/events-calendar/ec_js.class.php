@@ -261,7 +261,7 @@ class EC_JS {
 	    .click(function() {
 				var url = "<?php bloginfo('siteurl');?>/eventos?&e_a=<?php echo trim($year);?>&e_m=<?php echo trim($month);?>&e_d=<?php echo trim($day);?>";
 				console.log(url);
-				//window.location = url;
+				window.location = url;
        			//tb_show(	"<?php echo $date_show; ?>", "<?php bloginfo('siteurl');?>?EC_view=day&EC_month=<?php echo $month;?>&EC_day=<?php echo $day;?>&EC_year=<?php echo trim($year);?>&TB_iframe=true&width=<?php echo $tbw;?>&height=<?php echo $tbh;?>", false);
 			})
 			.tooltip({
@@ -282,7 +282,7 @@ class EC_JS {
 		}
 ?>
 		ecd.jq('#EC_previousMonth')
-			.append('&#171;<?php echo ucfirst($this->locale->get_month_abbrev($this->get_incrMonth($month-1)));?>')
+			.append('<?php echo ucfirst($this->locale->get_month_abbrev($this->get_incrMonth($month-1)));?>')
 			.mouseover(function() {
 				ecd.jq(this).css('cursor', 'pointer');
       		})
@@ -296,7 +296,7 @@ class EC_JS {
 				});
 
 		ecd.jq('#EC_nextMonth')
-			.prepend('<?php echo ucfirst($this->locale->get_month_abbrev($this->get_incrMonth($month+1)));?>&#187;')
+			.prepend('<?php echo ucfirst($this->locale->get_month_abbrev($this->get_incrMonth($month+1)));?>')
 			.mouseover(function() {
 				ecd.jq(this).css('cursor', 'pointer');
       		})

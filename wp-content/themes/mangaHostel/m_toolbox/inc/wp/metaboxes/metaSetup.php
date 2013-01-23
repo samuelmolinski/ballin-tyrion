@@ -15,28 +15,37 @@ $mb_destaque = new WPAlchemy_MetaBox(array
 (
 	'id' => 'destaque-customMeta',
 	'title' => 'Destaque',
-	'types' => array('post'), // added only for pages and to custom post type "events"
+	'types' => array('post', 'page'), // added only for pages and to custom post type "events"
 	'context' => 'side', // defaults to "normal"
 	'priority' => 'high', // defaults to "high"
 	'template' => METAPATH . 'meta/destaque-meta.php'
 ));
 
-/*
-$mb_gmap = new WPAlchemy_MetaBox(array
+$mb_parceiros = new WPAlchemy_MetaBox(array
 (
-	'id' => 'gmap-customMeta',
-	'title' => 'Google Map',
-	'types' => array('agenda', 'problema', 'proposta'), // added only for pages and to custom post type "events"
+	'id' => 'parceiros-customMeta',
+	'title' => 'URL do Parceiro',
+	'types' => array('cp_parceiros'), // added only for pages and to custom post type "events"
 	'context' => 'normal', // defaults to "normal"
 	'priority' => 'high', // defaults to "high"
-	'template' => METAPATH . 'meta/gmap-meta.php'
-));*/
+	'template' => METAPATH . 'meta/parceiros-meta.php'
+));
+
+$mb_dicas = new WPAlchemy_MetaBox(array
+(
+	'id' => 'dicas-customMeta',
+	'title' => 'URL do Parceiro',
+	'types' => array('cp_dicas'), // added only for pages and to custom post type "events"
+	'context' => 'normal', // defaults to "normal"
+	'priority' => 'high', // defaults to "high"
+	'template' => METAPATH . 'meta/dicas-meta.php'
+));
 
 $mb_page_slider = new WPAlchemy_MetaBox(array
 (
 	'id' => 'slider_meta',
 	'title' => 'Page Slider Settings',
-	'types' => array('page'), // added only for ablums
+	'types' => array('page', 'cp_acomodacaos'), // added only for ablums
 	'context' => 'normal', // same as above, defaults to "normal"
 	'priority' => 'high', // same as above, defaults to "high"
 	'template' => METAPATH . 'meta/slider-meta.php'

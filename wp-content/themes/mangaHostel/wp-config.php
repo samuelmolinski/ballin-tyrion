@@ -70,7 +70,6 @@ $table_prefix  = 'wp_';
  * ao português do Brasil.
  */
 define('WPLANG', 'pt_BR');
-
 /**
  * Para desenvolvedores: Modo debugging WordPress.
  *

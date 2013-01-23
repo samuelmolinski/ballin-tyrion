@@ -130,6 +130,7 @@ function bones_scripts_and_styles() {
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
     wp_register_style( 'anythingslider', get_stylesheet_directory_uri() . '/library/css/anythingslider.css', array(), '', 'all' );
+    wp_register_style( 'flexslider', get_stylesheet_directory_uri() . '/library/css/flexslider.css', array(), '', 'all' );
 
     // ie-only style sheet
     wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -142,11 +143,16 @@ function bones_scripts_and_styles() {
     //adding scripts file in the footer
     wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
     wp_register_script( 'anythingslider', get_stylesheet_directory_uri() . '/library/js/jquery.anythingslider.min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'flexslider', get_stylesheet_directory_uri() . '/library/js/jquery.flexslider.js', array( 'jquery' ), '', true );
+    wp_register_script( 'jtools', get_stylesheet_directory_uri() . '/library/js/jquery.tools.min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'socialMedia', get_stylesheet_directory_uri() . '/library/js/socialmedia.js', array( 'jquery' ), '', true );
+    wp_register_script( 'utilies', get_stylesheet_directory_uri() . '/m_toolbox/js/utilies.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style('anythingslider');
+    wp_enqueue_style('flexslider');
     wp_enqueue_style('bones-ie-only');
     /*
     I recommend using a plugin to call jQuery
@@ -155,6 +161,10 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'anythingslider' );
+    wp_enqueue_script( 'flexslider' );
+    wp_enqueue_script( 'jtools' );
+    //wp_enqueue_script( 'socialMedia' );
+    wp_enqueue_script( 'utilies' );
     wp_enqueue_script( 'bones-js' );
 
   }

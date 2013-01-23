@@ -238,6 +238,7 @@ class EC_Calendar {
 
 		$calendar = "\n" . '<div id="calendar_wrap">' . "\n"
 				. '<div class="calendar_event_title"><img src="'.get_bloginfo('template_url').'/library/images/calander-event-'.__('en','events-calendar') .'.png"></div>' . "\n"
+				. '<div class="bar2"></div>' . "\n"
 				. '<table summary="Event Calendar" id="wp-calendar">' . "\n"
 				. '<caption id="calendar-month" class="calendar-month">' . $m . '</caption>' . "\n";
 
@@ -266,7 +267,7 @@ class EC_Calendar {
 
 		// build the month navigation. the links will be provided by the EC_JS class
 		$calendar .= '<tfoot><tr><td class="pad calendar-year" style="text-align:center" colspan="7">' . trim($year)
-				. '</td></tr><tr>' . "\n"
+				. '</td></tr><tr id="prevNextMonths">' . "\n"
 				. '<td class="pad" style="text-align:left" colspan="2">&nbsp;'
 				. '<span id="EC_previousMonth"></span>'
 				. '</td>' . "\n"

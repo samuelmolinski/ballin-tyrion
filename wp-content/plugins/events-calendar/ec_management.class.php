@@ -152,16 +152,16 @@ class EC_Management {
 				$output .= "<strong>"._c('Link','events-calendar').": </strong><a href=\"".$linkout."\" target=\"_blank\">"._c('Click here','events-calendar')."</a><br />";
 			if(!empty($description) && !is_null($description))
 				$output .= "\n".$description;*/
-
+			$output .= "<div class='details'>";
 			if($startDate) {
-				$output .= '<div class="wrapper-date"><div class="bars w75"></div><div class="date w25">'.$startDate.'</div></div>';
+				$output .= '<div class="wrapper-date"><div class="bars w70"></div><div class="date w30"><!-- time -->'.$startDate.'</div></div>';
 			} else {
 				$output .= '<div class="wrapper-date"><div class="bars w100"></div><div class="date w0"></div></div>';				
 			}
 			if(!empty($location) && !is_null($location))
 				$output .= "<strong>"._c('Location','events-calendar').": </strong>$location<br />";
 			if(!empty($linkout) && !is_null($linkout))
-				$output .= "<strong>"._c('Link out','events-calendar').": </strong><a href=\"".$linkout."\" target=\"_blanck\">"._c('Click here','events-calendar')."</a><br />";
+				$output .= "<strong>"._c('Link out','events-calendar').": </strong><a href=\"".$linkout."\" target=\"_blank\">"._c('Click here','events-calendar')."</a><br />";
 
 			if((!empty($endTime) && !empty($startTime) || !is_null($endTime) && !is_null($startTime))&&($startDate != $endDate)) {
 				$output .= "<strong>"._c('Time','events-calendar').": </strong>$startDate $startTime - $endDate $endTime<br />";
@@ -172,13 +172,13 @@ class EC_Management {
 			} elseif(!empty($startTime) || !is_null($startTime)) {
 				$output .= "<strong>"._c('Time','events-calendar').": </strong>$startTime<br />";
 			}
-				
+			$output .= "</div>";
 			/*if($startDate != $endDate)
 				$output .= "<strong>"._c('End Date','events-calendar').": </strong>$endDate<br />";
 			if(!empty($endTime) && !empty($startTime) || !is_null($endTime) && !is_null($startTime))
 				$output .= "<strong>"._c('End Time','events-calendar').": </strong>$endTime<br />";*/
 			if(!empty($description) && !is_null($description))
-				$output .= $description;
+				$output .= '<!-- description -->'. substr(trim($description), 0, 200);
 			
 			$post_id = null;
 
@@ -197,11 +197,11 @@ class EC_Management {
 
 			  $data = array(
 					'post_content' => stripslashes($output)
-				 , 'post_title' => stripslashes($title)
-				 , 'post_date' => date('Y-m-d H:i:s')
-				 //, 'post_category' => array($post_author)
-				 , 'post_status' => $statusPost
-				 , 'post_author' => $post_author
+				  , 'post_title' => stripslashes($title)
+				  , 'post_date' => date('Y-m-d H:i:s')
+				  //, 'post_category' => array($post_author)
+				  , 'post_status' => $statusPost
+				  , 'post_author' => $post_author
 			  );
 			  $post_id = wp_insert_post($data);
 			  $results = $this->db->getLatestPost();
@@ -512,7 +512,7 @@ class EC_Management {
         </tr>
         <tr>
           <th scope="row"><label for="description"><?php _e('Description','events-calendar'); ?></label></th>
-          <td><textarea class="ec-edit-form-textarea" name="EC_description" id="EC_description"><?php echo stripslashes($event->eventDescription);?></textarea></td>
+          <td><textarea class="ec-edit-form-textarea" name="EC_description" id="EC_description"  maxlength=200><?php echo stripslashes($event->eventDescription);?></textarea></td>
         </tr>
         <tr>
           <th scope="row"><label for="startDate"><?php _e('Start Date (YYYY-MM-DD, if blank will be today)','events-calendar'); ?></label></th>

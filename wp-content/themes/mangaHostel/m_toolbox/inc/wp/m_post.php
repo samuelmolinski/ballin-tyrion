@@ -166,7 +166,18 @@
 		global $post;
 		
 		if ($imgSrc = get_post_image_src()) {
-			list($w, $h) = getimagesize($imgSrc);
+			$d = dirname(__FILE__);
+			$d2 = explode('wp-content/', $d);
+			$s = explode('wp-content/', $imgSrc);
+			//$d2 = str_replace('themes/mangaHostel/m_toolbox/inc/wp', '', $d2);
+			//$s = str_replace('http://mangahostelrio.com/wp-content/', '', $imgSrc);
+			//d(imgSrc);
+			//d($d);
+			//d($d2);
+			//d($s);
+			//home/storage/a/43/5b/mangahostelrio/public_html/wp-content/themes/mangaHostel/m_toolbox/inc/wp
+			//http://mangahostelrio.com/wp-content/uploads/2012/12/Tulips.jpg
+			list($w, $h) = @getimagesize($d2[0].'wp-content/'.$s[1]);
 		} else {
 			return false;
 		}
