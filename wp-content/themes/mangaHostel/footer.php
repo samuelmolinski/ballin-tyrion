@@ -243,9 +243,9 @@
 				log(desc);
 
 				if(desc > 240) {
-					jQuery('article>.description').css({'width': desc+'px'});
+					jQuery('article>.description, #main.description').css({'width': desc+'px'});
 				} else {
-					jQuery('article>.description').css({'width': 'auto'});
+					jQuery('article>.description, #main.description').css({'width': 'auto'});
 				}
 
 				if(desc > 240) {

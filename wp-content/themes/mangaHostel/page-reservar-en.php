@@ -11,7 +11,7 @@ get_header(); ?>
 					
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">					
 						    <section class="entry-content">
-							    <iframe src="https://ssl.minihotelpms.com/manga/frm_motel_Orders_new.aspx?dbkey=manga&lng=en" frameborder="0" width="700" height="700"></iframe>
+							    <iframe src="https://ssl.minihotelpms.com/manga/frm_motel_Orders_new.aspx?dbkey=manga&prclist=*all&lng=en" frameborder="0" width="700" height="700"></iframe>
 						    </section> <!-- end article section -->					
 					    </article> <!-- end article -->
 					

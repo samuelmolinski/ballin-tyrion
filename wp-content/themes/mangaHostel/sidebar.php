@@ -13,10 +13,10 @@
 						<li class="ig btn"><a href="#" target="_blank"></a></li> -->
 						<li class="fs btn"><a href="https://foursquare.com/v/manga-hostel/50917cda8055b16bc27448e1" target="_blank"></a></li>
 					</ul>
-					<!-- <div class='lang clearfix'>
+					<div class='lang clearfix'>
 						<div class="bars"></div>
 						<a href='http://mangahostelrio.com/' class='pt_br'/><a href='http://mangahostelrio.com/en/'  class='en_br'></a>
-					</div> -->
+					</div>
 					
 					<?php /*if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 

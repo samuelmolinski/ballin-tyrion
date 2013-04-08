@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'mangaHostel');
+define('DB_NAME', 'mangahostel');
 
 /** MySQL database username */
 define('DB_USER', 'admin');
@@ -77,7 +77,7 @@ define('WPLANG', 'pt_BR');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* Multisite */
 /*define('WP_ALLOW_MULTISITE', true);
